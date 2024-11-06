@@ -9,7 +9,7 @@
 
 ## Proje Özeti
 
-Hayvan Hastanesi Otomasyon Sistemi, hayvan hastanesindeki çeşitli süreçlerin dijital ortamda izlenmesi ve yönetilmesini sağlayan bir sistemdir. Bu sistem, hayvanlar ve sahipleri, veterinerler, randevular, tedavi işlemleri ve diğer operasyonel süreçleri kapsar. Sistemin temel amacı, her süreçte tutarlılık ve veri bütünlüğünü sağlarken, bilgiye erişimi ve işlem yapmayı verimli hale getirmektir.
+Hayvan Hastanesi Otomasyon Sistemi , hayvan hastanesindeki çeşitli süreçlerin dijital ortamda izlenmesi ve yönetilmesini sağlayan bir sistemdir. Bu sistem, hayvanlar ve sahipleri, veterinerler, randevular, tedavi işlemleri ve diğer operasyonel süreçleri kapsar. Sistemin temel amacı, her süreçte tutarlılık ve veri bütünlüğünü sağlarken, bilgiye erişimi ve işlem yapmayı verimli hale getirmektir.
 
 ---
 

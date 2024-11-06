@@ -1,71 +1,159 @@
-# HAYVAN HASTANESİ VE BARINAĞI PROJESİ
+# Hayvan Hastanesi Otomasyon Sistemi Projesi
 
-Proje Ortakları:
-Rauf Agah Subaşı (235260133),
-Hakan Yalçın(235260139),
-Gizem Yılmaz(235260193)
+### Proje Ortakları
+- **Rauf Agah Subaşı** (235260133)
+- **Hakan Yalçın** (235260139)
+- **Gizem Yılmaz** (235260193)
 
-Proje Özeti
-Hayvan Hastanesi Otomasyon Sistemi, hayvan hastanesinde çeşitli süreçlerin dijital ortama taşınarak izlenmesi ve yönetilmesini sağlar. Bu sistem, hayvanlar ve sahipleri, veterinerler, randevular, tedavi işlemleri ve hastane içerisindeki diğer operasyonlar gibi birçok işlevsel alanı kapsar. Proje, her bir süreçte tutarlılık ve veri bütünlüğünü sağlarken aynı zamanda verimli bir şekilde bilgiye erişim ve işlem yapma olanağı sunar.
-Projede Yer Alacak İşlemler
-Randevu Yönetimi: Hayvanlar için randevu oluşturulması, iptal edilmesi ve güncellenmesi işlemlerini içerir.
-Tedavi ve Muayene Kaydı: Randevular sonucunda yapılan muayeneler ve tedavi işlemlerinin detaylı kaydının tutulması sağlanır.
-İlaç ve Stok Takibi: İlaçların son kullanma tarihine göre takibi, stok durumu ve depolama işlemlerinin yönetimi yapılır.
-Fatura Oluşturma ve Takibi: Hayvan sahipleri için tedavi ve diğer hizmetlerin faturalarının oluşturulması ve ödeme durumlarının izlenmesi sağlanır.
-Oda ve Konaklama Yönetimi: Hayvanların hastanede konakladığı odaların durumuna göre oda yönetimi yapılır.
-Aşı ve Sağlık Takvimi: Hayvanların aşı takvimlerinin düzenlenmesi, yaklaşan aşıların hatırlatılması ve yeni aşıların kaydedilmesi sağlanır.
-Beslenme ve Diyet Yönetimi: Hayvanların beslenme planlarının düzenlenmesi ve porsiyon miktarlarının takip edilmesi sağlanır.
-Çalışan ve Görev Yönetimi: Çalışanların görev tanımları, iş yükleri ve iletişim bilgilerinin yönetilmesi sağlanır.
-Projede Yer Alan Varlıklar ve Nitelikleri
-Aşağıda projede kullanılacak başlıca varlıklar ve her bir varlığın sahip olduğu nitelikler verilmiştir:
+---
 
-Hayvanlar: Hayvan hastanesinde tedavi gören her bir hayvanın bilgilerini içerir.
+## Proje Özeti
 
-HayvanID, HayvanAdi, Tur, Yas, SahipID, Cinsiyet, Ağırlık, TarihKayit
-Sahipler: Hayvanların sahiplerine dair bilgileri içerir.
-SahipID, SahipAdi, Telefon, Adres
-Veterinerler: Hayvan hastanesinde çalışan veterinerlere ait bilgiler.
+Hayvan Hastanesi Otomasyon Sistemi, hayvan hastanesindeki çeşitli süreçlerin dijital ortamda izlenmesi ve yönetilmesini sağlayan bir sistemdir. Bu sistem, hayvanlar ve sahipleri, veterinerler, randevular, tedavi işlemleri ve diğer operasyonel süreçleri kapsar. Sistemin temel amacı, her süreçte tutarlılık ve veri bütünlüğünü sağlarken, bilgiye erişimi ve işlem yapmayı verimli hale getirmektir.
 
-VeterinerID, VeterinerAdi, Uzmanlik, Telefon
-Randevular: Hayvanlar için alınan randevuların tarih ve saat detaylarını içerir.
+---
 
-RandevuID, HayvanID, VeterinerID, Tarih, Saat, Sorun
-Tedaviler: Hayvanlara yapılan tedavilerin kayıtlarını tutar.
+## Projede Yer Alacak İşlemler
 
-TedaviID, RandevuID, TedaviAciklamasi, Ilaclar, TedaviTarihi, Maliyet
-İlaçlar: Hayvanların tedavisinde kullanılan ilaçların stok ve son kullanma tarihlerini içerir.
+1. **Randevu Yönetimi**: Hayvanlar için randevu oluşturma, iptal etme ve güncelleme işlemleri.
+2. **Tedavi ve Muayene Kaydı**: Randevular sonucunda yapılan muayenelerin ve tedavi işlemlerinin detaylı kaydının tutulması.
+3. **İlaç ve Stok Takibi**: İlaçların son kullanma tarihine göre takibi, stok durumu ve depolama işlemleri.
+4. **Fatura Oluşturma ve Takibi**: Tedavi ve diğer hizmetler için hayvan sahiplerine fatura oluşturulması ve ödeme durumlarının izlenmesi.
+5. **Oda ve Konaklama Yönetimi**: Hayvanların hastanede konakladığı odaların durumuna göre yönetim sağlanması.
+6. **Aşı ve Sağlık Takvimi**: Hayvanların aşı takvimlerinin düzenlenmesi, yaklaşan aşıların hatırlatılması ve yeni aşıların kaydedilmesi.
+7. **Beslenme ve Diyet Yönetimi**: Hayvanların beslenme planlarının ve porsiyon miktarlarının takip edilmesi.
+8. **Çalışan ve Görev Yönetimi**: Çalışanların görev tanımları, iş yükleri ve iletişim bilgilerinin yönetilmesi.
 
-IlacID, IlacAdi, Miktar, SonKullanmaTarihi
-Odalar: Hayvanların konakladığı veya tedavi edildiği odaların bilgilerini içerir.
+---
 
-OdaID, OdaAdi, KatNo, Durum
-Muayeneler: Yapılan muayene işlemlerinin kayıtları.
+## Projede Yer Alan Varlıklar ve Nitelikleri
 
-MuayeneID, RandevuID, Bulgular, Teshis
-Ameliyatlar: Ameliyat geçmişi ve detaylarının tutulduğu tablo.
+### Hayvanlar
+Hayvan hastanesinde tedavi gören her bir hayvanın bilgilerini içerir.
+- **HayvanID**: Hayvanın benzersiz kimliği
+- **HayvanAdi**: Hayvanın adı
+- **Tür**: Hayvanın türü
+- **Yaş**: Hayvanın yaşı
+- **SahipID**: Hayvan sahibinin kimliği
+- **Cinsiyet**: Hayvanın cinsiyeti
+- **Ağırlık**: Hayvanın ağırlığı
+- **TarihKayit**: Kayıt tarihi
 
-AmeliyatID, HayvanID, VeterinerID, AmeliyatTarihi, AmeliyatDetaylari, Maliyet
-Hastalıklar: Yaygın hastalıklar ve belirtilerini tanımlayan tablo.
+### Sahipler
+Hayvanların sahiplerine dair bilgileri içerir.
+- **SahipID**: Sahip kimliği
+- **SahipAdi**: Sahip adı
+- **Telefon**: İletişim numarası
+- **Adres**: İkamet adresi
 
-HastalikID, HastalikAdi, Belirtiler, TedaviYontemi
-Aşılar: Hayvanlara yapılan aşıların takibi için kullanılır.
+### Veterinerler
+Hastanede çalışan veterinerlere ait bilgileri içerir.
+- **VeterinerID**: Veteriner kimliği
+- **VeterinerAdi**: Veteriner adı
+- **Uzmanlık**: Uzmanlık alanı
+- **Telefon**: İletişim numarası
 
-AsiID, AsiAdi, AsiTarihi, SonrakiAsiTarihi, HayvanID
-Faturalar: Hayvan sahiplerinin ödemesi gereken faturaları içerir.
-FaturaID, HayvanID, FaturaTarihi, ToplamTutar, OdenmeDurumu
-Stoklar: İlaçların depolardaki stok miktarını tutar.
+### Randevular
+Hayvanlar için alınan randevuların tarih ve saat detaylarını içerir.
+- **RandevuID**: Randevu kimliği
+- **HayvanID**: Hayvan kimliği
+- **VeterinerID**: Veteriner kimliği
+- **Tarih**: Randevu tarihi
+- **Saat**: Randevu saati
+- **Sorun**: Randevu nedeni
 
-StokID, IlacID, Miktar, DepoYer
-Çalışanlar: Hayvan hastanesinde çalışan personelin bilgilerini içerir.
+### Tedaviler
+Hayvanlara yapılan tedavilerin kayıtlarını tutar.
+- **TedaviID**: Tedavi kimliği
+- **RandevuID**: İlgili randevu kimliği
+- **TedaviAçıklaması**: Tedavi detayları
+- **İlaçlar**: Kullanılan ilaçlar
+- **TedaviTarihi**: Tedavi tarihi
+- **Maliyet**: Tedavi maliyeti
 
-CalisanID, CalisanAdi, Gorev, Telefon, Maaş.
-Beslenme Planları: Hayvanların beslenme detaylarını tutar.
+### İlaçlar
+Tedavide kullanılan ilaçların bilgilerini içerir.
+- **İlaçID**: İlaç kimliği
+- **İlaçAdi**: İlaç adı
+- **Miktar**: Mevcut stok miktarı
+- **SonKullanmaTarihi**: Son kullanma tarihi
 
-BeslenmeID, HayvanID, Yemekler, PorsiyonMiktari, OgünSayisi
-Laboratuvar Sonuçları: Yapılan test sonuçları ve detayları.
+### Odalar
+Hayvanların konakladığı odaların bilgilerini içerir.
+- **OdaID**: Oda kimliği
+- **OdaAdi**: Oda adı
+- **KatNo**: Oda kat numarası
+- **Durum**: Oda durumu
 
-SonucID, HayvanID, TestTarihi, TestAdi, SonucDetayi
+### Muayeneler
+Yapılan muayene işlemlerinin kayıtlarını içerir.
+- **MuayeneID**: Muayene kimliği
+- **RandevuID**: İlgili randevu kimliği
+- **Bulgular**: Muayene bulguları
+- **Teşhis**: Muayene sonucu teşhis
 
+### Ameliyatlar
+Ameliyat geçmişi ve detaylarını içerir.
+- **AmeliyatID**: Ameliyat kimliği
+- **HayvanID**: Hayvan kimliği
+- **VeterinerID**: Ameliyatı yapan veteriner kimliği
+- **AmeliyatTarihi**: Ameliyat tarihi
+- **AmeliyatDetayları**: Ameliyat detayları
+- **Maliyet**: Ameliyat maliyeti
+
+### Hastalıklar
+Yaygın hastalıklar ve belirtilerini tanımlar.
+- **HastalıkID**: Hastalık kimliği
+- **HastalıkAdi**: Hastalık adı
+- **Belirtiler**: Hastalığın belirtileri
+- **TedaviYöntemi**: Tedavi yöntemi
+
+### Aşılar
+Hayvanlara yapılan aşıların takibini içerir.
+- **AşıID**: Aşı kimliği
+- **AşıAdi**: Aşı adı
+- **AşıTarihi**: Aşı yapılma tarihi
+- **SonrakiAşıTarihi**: Sonraki aşı tarihi
+- **HayvanID**: İlgili hayvan kimliği
+
+### Faturalar
+Hayvan sahiplerinin ödemesi gereken faturaları içerir.
+- **FaturaID**: Fatura kimliği
+- **HayvanID**: İlgili hayvan kimliği
+- **FaturaTarihi**: Fatura tarihi
+- **ToplamTutar**: Fatura toplam tutarı
+- **ÖdenmeDurumu**: Fatura ödeme durumu
+
+### Stoklar
+İlaçların depolardaki stok miktarını içerir.
+- **StokID**: Stok kimliği
+- **İlaçID**: İlgili ilaç kimliği
+- **Miktar**: Stok miktarı
+- **DepoYer**: Depo yeri
+
+### Çalışanlar
+Hastanede çalışan personelin bilgilerini içerir.
+- **ÇalışanID**: Çalışan kimliği
+- **ÇalışanAdi**: Çalışan adı
+- **Görev**: Çalışanın görevi
+- **Telefon**: İletişim numarası
+- **Maaş**: Çalışan maaşı
+
+### Beslenme Planları
+Hayvanların beslenme detaylarını içerir.
+- **BeslenmeID**: Beslenme kimliği
+- **HayvanID**: İlgili hayvan kimliği
+- **Yemekler**: Yemek listesi
+- **PorsiyonMiktarı**: Porsiyon miktarı
+- **ÖğünSayısı**: Günlük öğün sayısı
+
+### Laboratuvar Sonuçları
+Yapılan test sonuçları ve detaylarını içerir.
+- **SonuçID**: Sonuç kimliği
+- **HayvanID**: İlgili hayvan kimliği
+- **TestTarihi**: Test tarihi
+- **TestAdi**: Test adı
+- **SonuçDetayı**: Test sonucu detayları
 ER DİYAGRAMI
 
 

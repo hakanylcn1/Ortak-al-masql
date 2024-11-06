@@ -1,193 +1,71 @@
 # Ortak-al-masql
 SQL projemiz için ortak çalışma reposudur.
---CREATE TABLE Hayvanlar (
---    HayvanID INT PRIMARY KEY,
---    HayvanAdi VARCHAR(100),
---    Tur VARCHAR(50),
---    Yas INT,
---    SahipID INT, -- Sahibi belirlemek için
---    Cinsiyet VARCHAR(10),
---    Ağırlık DECIMAL(5,2),
---    TarihKayit DATE
---);
+Proje Özeti
+Hayvan Hastanesi Otomasyon Sistemi, hayvan hastanesinde çeşitli süreçlerin dijital ortama taşınarak izlenmesi ve yönetilmesini sağlar. Bu sistem, hayvanlar ve sahipleri, veterinerler, randevular, tedavi işlemleri ve hastane içerisindeki diğer operasyonlar gibi birçok işlevsel alanı kapsar. Proje, her bir süreçte tutarlılık ve veri bütünlüğünü sağlarken aynı zamanda verimli bir şekilde bilgiye erişim ve işlem yapma olanağı sunar.
 
---CREATE TABLE Sahipler (
---    SahipID INT PRIMARY KEY,
---    SahipAdi VARCHAR(100),
---    Telefon VARCHAR(15),
---    Adres VARCHAR(255)
---);
+2. Projede Yer Alan Varlıklar ve Nitelikleri
+Aşağıda projede kullanılacak başlıca varlıklar ve her bir varlığın sahip olduğu nitelikler verilmiştir:
 
+Hayvanlar: Hayvan hastanesinde tedavi gören her bir hayvanın bilgilerini içerir.
 
+HayvanID, HayvanAdi, Tur, Yas, SahipID, Cinsiyet, Ağırlık, TarihKayit
+Sahipler: Hayvanların sahiplerine dair bilgileri içerir.
 
---CREATE TABLE Veterinerler (
---    VeterinerID INT PRIMARY KEY,
---    VeterinerAdi VARCHAR(100),
---    Uzmanlik VARCHAR(100),
---    Telefon VARCHAR(15)
---);
+SahipID, SahipAdi, Telefon, Adres
+Veterinerler: Hayvan hastanesinde çalışan veterinerlere ait bilgiler.
 
+VeterinerID, VeterinerAdi, Uzmanlik, Telefon
+Randevular: Hayvanlar için alınan randevuların tarih ve saat detaylarını içerir.
 
---CREATE TABLE Randevular (
---    RandevuID INT PRIMARY KEY,
---    HayvanID INT,
---    VeterinerID INT,
---    Tarih DATE,
---    Saat TIME,
---    Sorun VARCHAR(255),
---    FOREIGN KEY (HayvanID) REFERENCES Hayvanlar(HayvanID),
---    FOREIGN KEY (VeterinerID) REFERENCES Veterinerler(VeterinerID)
---);
+RandevuID, HayvanID, VeterinerID, Tarih, Saat, Sorun
+Tedaviler: Hayvanlara yapılan tedavilerin kayıtlarını tutar.
 
---CREATE TABLE Tedaviler (
---    TedaviID INT PRIMARY KEY,
---    RandevuID INT,
---    TedaviAciklamasi VARCHAR(255),
---    Ilaclar VARCHAR(255),
---    TedaviTarihi DATE,
---    Maliyet DECIMAL(10,2),
---    FOREIGN KEY (RandevuID) REFERENCES Randevular(RandevuID)
---);
+TedaviID, RandevuID, TedaviAciklamasi, Ilaclar, TedaviTarihi, Maliyet
+İlaçlar: Hayvanların tedavisinde kullanılan ilaçların stok ve son kullanma tarihlerini içerir.
 
+IlacID, IlacAdi, Miktar, SonKullanmaTarihi
+Odalar: Hayvanların konakladığı veya tedavi edildiği odaların bilgilerini içerir.
 
+OdaID, OdaAdi, KatNo, Durum
+Muayeneler: Yapılan muayene işlemlerinin kayıtları.
 
---CREATE TABLE Ilaclar (
---    IlacID INT PRIMARY KEY,
---    IlacAdi VARCHAR(100),
---    Miktar INT,
---    SonKullanmaTarihi DATE
---);
+MuayeneID, RandevuID, Bulgular, Teshis
+Ameliyatlar: Ameliyat geçmişi ve detaylarının tutulduğu tablo.
 
---CREATE TABLE Odalar (
---    OdaID INT PRIMARY KEY,
---    OdaAdi VARCHAR(50),
---    KatNo INT,
---    Durum VARCHAR(20) -- (Boş, Dolu, Temizlikte vs.)
---);
+AmeliyatID, HayvanID, VeterinerID, AmeliyatTarihi, AmeliyatDetaylari, Maliyet
+Hastalıklar: Yaygın hastalıklar ve belirtilerini tanımlayan tablo.
 
---CREATE TABLE Muayeneler (
---    MuayeneID INT PRIMARY KEY,
---    RandevuID INT,
---    Bulgular VARCHAR(255),
---    Teshis VARCHAR(255),
---    FOREIGN KEY (RandevuID) REFERENCES Randevular(RandevuID)
---);
+HastalikID, HastalikAdi, Belirtiler, TedaviYontemi
+Aşılar: Hayvanlara yapılan aşıların takibi için kullanılır.
 
---CREATE TABLE Ameliyatlar (
---    AmeliyatID INT PRIMARY KEY,
---    HayvanID INT,
---    VeterinerID INT,
---    AmeliyatTarihi DATE,
---    AmeliyatDetaylari VARCHAR(255),
---    Maliyet DECIMAL(10,2),
---    FOREIGN KEY (HayvanID) REFERENCES Hayvanlar(HayvanID),
---    FOREIGN KEY (VeterinerID) REFERENCES Veterinerler(VeterinerID)
---);
+AsiID, AsiAdi, AsiTarihi, SonrakiAsiTarihi, HayvanID
+Faturalar: Hayvan sahiplerinin ödemesi gereken faturaları içerir.
 
+FaturaID, HayvanID, FaturaTarihi, ToplamTutar, OdenmeDurumu
+Stoklar: İlaçların depolardaki stok miktarını tutar.
 
---CREATE TABLE Hastaliklar (
---    HastalikID INT PRIMARY KEY,
---    HastalikAdi VARCHAR(100),
---    Belirtiler VARCHAR(255),
---    TedaviYontemi VARCHAR(255)
---);
+StokID, IlacID, Miktar, DepoYeri
+Çalışanlar: Hayvan hastanesinde çalışan personelin bilgilerini içerir.
 
---CREATE TABLE Asilar (
---    AsiID INT PRIMARY KEY,
---    AsiAdi VARCHAR(100),
---    AsiTarihi DATE,
---    SonrakiAsiTarihi DATE,
---    HayvanID INT,
---    FOREIGN KEY (HayvanID) REFERENCES Hayvanlar(HayvanID)
---);
+CalisanID, CalisanAdi, Gorev, Telefon, Maas
+Beslenme Planları: Hayvanların beslenme detaylarını tutar.
 
+BeslenmeID, HayvanID, Yemekler, PorsiyonMiktari, OgünSayisi
+Laboratuvar Sonuçları: Yapılan test sonuçları ve detayları.
 
---CREATE TABLE Faturalar (
---    FaturaID INT PRIMARY KEY,
---    HayvanID INT,
---    FaturaTarihi DATE,
---    ToplamTutar DECIMAL(10,2),
---    OdenmeDurumu VARCHAR(20), -- (Ödendi, Ödenmedi)
---    FOREIGN KEY (HayvanID) REFERENCES Hayvanlar(HayvanID)
---);
-
---CREATE TABLE Stoklar (
---    StokID INT PRIMARY KEY,
---    IlacID INT,
---    Miktar INT,
---    DepoYeri VARCHAR(50),
---    FOREIGN KEY (IlacID) REFERENCES Ilaclar(IlacID)
---);
-
---CREATE TABLE Calisanlar (
---    CalisanID INT PRIMARY KEY,
---    CalisanAdi VARCHAR(100),
---    Gorev VARCHAR(100),
---    Telefon VARCHAR(15),
---    Maas DECIMAL(10,2)
---);
-
---CREATE TABLE BeslenmePlanlari (
---    BeslenmeID INT PRIMARY KEY,
---    HayvanID INT,
---    Yemekler VARCHAR(255),
---    PorsiyonMiktari DECIMAL(5,2),
---    OgünSayisi INT,
---    FOREIGN KEY (HayvanID) REFERENCES Hayvanlar(HayvanID)
---);
-
-
-
---CREATE TABLE Ziyaretler (
---    ZiyaretID INT PRIMARY KEY,
---    HayvanID INT,
---    ZiyaretciAdi VARCHAR(100),
---    ZiyaretTarihi DATE,
---    ZiyaretNedeni VARCHAR(255),
---    FOREIGN KEY (HayvanID) REFERENCES Hayvanlar(HayvanID)
---);
-
-
---CREATE TABLE LaboratuvarSonuclari (
---    SonucID INT PRIMARY KEY,
---    HayvanID INT,
---    TestTarihi DATE,
---    TestAdi VARCHAR(100),
---    SonucDetayi VARCHAR(255),
---    FOREIGN KEY (HayvanID) REFERENCES Hayvanlar(HayvanID)
---);
-
---CREATE TABLE Raporlar (
---    RaporID INT PRIMARY KEY,
---    HayvanID INT,
---    VeterinerID INT,
---    RaporTarihi DATE,
---    RaporAciklamasi VARCHAR(255),
---    FOREIGN KEY (HayvanID) REFERENCES Hayvanlar(HayvanID),
---    FOREIGN KEY (VeterinerID) REFERENCES Veterinerler(VeterinerID)
---);
-
---CREATE TABLE IsYonetimi (
---    IsID INT PRIMARY KEY,
---    CalisanID INT,
---    Gorev VARCHAR(100),
---    BaslangicTarihi DATE,
---    BitisTarihi DATE,
---    IsDurumu VARCHAR(20), -- (Tamamlandı, Devam Ediyor vs.)
---    FOREIGN KEY (CalisanID) REFERENCES Calisanlar(CalisanID)
---);
-
-
---CREATE TABLE BeslemeKayitlari (
---    KayitID INT PRIMARY KEY,
---    HayvanID INT,
---    Tarih DATE,
---    Yemek VARCHAR(100),
---    PorsiyonMiktari DECIMAL(5,2),
---    Notlar VARCHAR(255),
---    FOREIGN KEY (HayvanID) REFERENCES Hayvanlar(HayvanID)
---);
---alter table Sahipler add constraint chcksahip foreign key(HayvanID) references Hayvanlar(HayvanID)
---alter table Hastaliklar add  constraint chckhastalik foreign key(HayvanID) references Hayvanlar(HayvanID)
---alter table Odalar add  constraint chckoda foreign key (HayvanID) references Hayvanlar (HayvanID)
-
+SonucID, HayvanID, TestTarihi, TestAdi, SonucDetayi
+3. Projede Yer Alacak İşlemler
+Randevu Yönetimi: Hayvanlar için randevu oluşturulması, iptal edilmesi ve güncellenmesi işlemlerini içerir.
+Tedavi ve Muayene Kaydı: Randevular sonucunda yapılan muayeneler ve tedavi işlemlerinin detaylı kaydının tutulması sağlanır.
+İlaç ve Stok Takibi: İlaçların son kullanma tarihine göre takibi, stok durumu ve depolama işlemlerinin yönetimi yapılır.
+Fatura Oluşturma ve Takibi: Hayvan sahipleri için tedavi ve diğer hizmetlerin faturalarının oluşturulması ve ödeme durumlarının izlenmesi sağlanır.
+Oda ve Konaklama Yönetimi: Hayvanların hastanede konakladığı odaların durumuna göre oda yönetimi yapılır.
+Aşı ve Sağlık Takvimi: Hayvanların aşı takvimlerinin düzenlenmesi, yaklaşan aşıların hatırlatılması ve yeni aşıların kaydedilmesi sağlanır.
+Beslenme ve Diyet Yönetimi: Hayvanların beslenme planlarının düzenlenmesi ve porsiyon miktarlarının takip edilmesi sağlanır.
+Çalışan ve Görev Yönetimi: Çalışanların görev tanımları, iş yükleri ve iletişim bilgilerinin yönetilmesi sağlanır.
+4. Proje Gereksinimleri
+Kullanıcı Erişimi: Sisteme yalnızca yetkili personelin erişim sağlayabilmesi için güvenli giriş sistemi.
+Veri Bütünlüğü: Tüm veri girişi ve güncelleme işlemlerinde veri doğruluğunu sağlamak adına ilişkili tablolar arasında tutarlılık sağlanmalıdır.
+Yedekleme ve Kurtarma: Sistemde düzenli yedekleme yapılması ve gerektiğinde verilerin geri yüklenmesi için bir yedekleme sistemi olmalıdır.
+Raporlama: Hastane yönetimine yönelik aylık hasta sayısı, tedavi türleri ve toplam gelir gibi bilgilerin raporlanması.
+Bildirim ve Hatırlatma: Randevu hatırlatmaları, aşılama tarihleri ve son kullanma tarihine yakın ilaçlar için bildirimlerin yapılması.

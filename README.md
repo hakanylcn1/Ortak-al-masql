@@ -1,12 +1,12 @@
-# Ortak-al-masql
+# HAYVAN HASTANESİ VE BARINAĞI PROJESİ
 
 Proje Ortakları:
-Rauf Agah Subaşı,
-Hakan Yalçın,
-Gizem Yılmaz
+Rauf Agah Subaşı (235260133),
+Hakan Yalçın(235260139),
+Gizem Yılmaz(235260193)
 
 Proje Özeti
-Hayvan Hastanesi Otomasyon Sistemi, hayvan hastanesinde çeşitli süreçlerin dijital ortama taşınarak izlenmesi ve yönetilmesini sağlar. Bu sistem, hayvanlar ve sahipleri, veterinerler, randevular, tedavi işlemleri ve hastane içerisindeki diğer operasyonlar gibi birçok işlevsel alanı kapsar. Proje, her bir süreçte tutarlılık ve veri bütünlüğünü sağlarken aynı zamanda verimli bir şekilde bilgiye erişim ve işlem yapma olanağı sunar.
+Hayvan Hastanesi Otomasyon Sistemi, hayvan hastanesinde çeşitli süreçlerin dijital ortama taşınarak izlenmesi ve yönetilmesini sağlar. Bu sistem, hayvanlar ve sahipleri, veterinerler, randevular, tedavi işlemleri ve hastane içerisindeki diğer operasyonlar gibi birçok işlevsel alanı kapsar. Proje, her bir süreçte tutarlılık ve veri bütünlüğünü sağlarken aynı zamanda verimli bir şekilde bilgiye erişim ve işlem yapma olanağı sunar.
 Projede Yer Alacak İşlemler
 Randevu Yönetimi: Hayvanlar için randevu oluşturulması, iptal edilmesi ve güncellenmesi işlemlerini içerir.
 Tedavi ve Muayene Kaydı: Randevular sonucunda yapılan muayeneler ve tedavi işlemlerinin detaylı kaydının tutulması sağlanır.
@@ -15,7 +15,7 @@ Fatura Oluşturma ve Takibi: Hayvan sahipleri için tedavi ve diğer hizmetlerin
 Oda ve Konaklama Yönetimi: Hayvanların hastanede konakladığı odaların durumuna göre oda yönetimi yapılır.
 Aşı ve Sağlık Takvimi: Hayvanların aşı takvimlerinin düzenlenmesi, yaklaşan aşıların hatırlatılması ve yeni aşıların kaydedilmesi sağlanır.
 Beslenme ve Diyet Yönetimi: Hayvanların beslenme planlarının düzenlenmesi ve porsiyon miktarlarının takip edilmesi sağlanır.
-Çalışan ve Görev Yönetimi: Çalışanların görev tanımları, iş yükleri ve iletişim bilgilerinin yönetilmesi sağlanır.
+Çalışan ve Görev Yönetimi: Çalışanların görev tanımları, iş yükleri ve iletişim bilgilerinin yönetilmesi sağlanır.
 Projede Yer Alan Varlıklar ve Nitelikleri
 Aşağıda projede kullanılacak başlıca varlıklar ve her bir varlığın sahip olduğu nitelikler verilmiştir:
 
@@ -23,7 +23,6 @@ Hayvanlar: Hayvan hastanesinde tedavi gören her bir hayvanın bilgilerini içer
 
 HayvanID, HayvanAdi, Tur, Yas, SahipID, Cinsiyet, Ağırlık, TarihKayit
 Sahipler: Hayvanların sahiplerine dair bilgileri içerir.
-
 SahipID, SahipAdi, Telefon, Adres
 Veterinerler: Hayvan hastanesinde çalışan veterinerlere ait bilgiler.
 
@@ -53,19 +52,22 @@ Aşılar: Hayvanlara yapılan aşıların takibi için kullanılır.
 
 AsiID, AsiAdi, AsiTarihi, SonrakiAsiTarihi, HayvanID
 Faturalar: Hayvan sahiplerinin ödemesi gereken faturaları içerir.
-
 FaturaID, HayvanID, FaturaTarihi, ToplamTutar, OdenmeDurumu
 Stoklar: İlaçların depolardaki stok miktarını tutar.
 
-StokID, IlacID, Miktar, DepoYeri
+StokID, IlacID, Miktar, DepoYer
 Çalışanlar: Hayvan hastanesinde çalışan personelin bilgilerini içerir.
 
-CalisanID, CalisanAdi, Gorev, Telefon, Maas
+CalisanID, CalisanAdi, Gorev, Telefon, Maaş.
 Beslenme Planları: Hayvanların beslenme detaylarını tutar.
 
 BeslenmeID, HayvanID, Yemekler, PorsiyonMiktari, OgünSayisi
 Laboratuvar Sonuçları: Yapılan test sonuçları ve detayları.
 
-SonucID, HayvanID, TestTarihi, TestAdi, SonucDetayi
+SonucID, HayvanID, TestTarihi, TestAdi, SonucDetayi
+
+IR DİYAGRAMI
+
+
 
 ![Ekran görüntüsü 2024-11-06 121246](https://github.com/user-attachments/assets/a41b2bca-6935-483a-aacd-14b754e13854)

@@ -66,7 +66,7 @@ Laboratuvar Sonuçları: Yapılan test sonuçları ve detayları.
 
 SonucID, HayvanID, TestTarihi, TestAdi, SonucDetayi
 
-IR DİYAGRAMI
+ER DİYAGRAMI
 
 
 

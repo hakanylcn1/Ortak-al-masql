@@ -101,12 +101,7 @@ Ameliyat geçmişi ve detaylarını içerir.
 - **AmeliyatDetayları**: Ameliyat detayları
 - **Maliyet**: Ameliyat maliyeti
 
-### Hastalıklar
-Yaygın hastalıklar ve belirtilerini tanımlar.
-- **HastalıkID**: Hastalık kimliği
-- **HastalıkAdi**: Hastalık adı
-- **Belirtiler**: Hastalığın belirtileri
-- **TedaviYöntemi**: Tedavi yöntemi
+
 
 ### Aşılar
 Hayvanlara yapılan aşıların takibini içerir.
@@ -124,36 +119,12 @@ Hayvan sahiplerinin ödemesi gereken faturaları içerir.
 - **ToplamTutar**: Fatura toplam tutarı
 - **ÖdenmeDurumu**: Fatura ödeme durumu
 
-### Stoklar
-İlaçların depolardaki stok miktarını içerir.
-- **StokID**: Stok kimliği
-- **İlaçID**: İlgili ilaç kimliği
-- **Miktar**: Stok miktarı
-- **DepoYer**: Depo yeri
 
-### Çalışanlar
-Hastanede çalışan personelin bilgilerini içerir.
-- **ÇalışanID**: Çalışan kimliği
-- **ÇalışanAdi**: Çalışan adı
-- **Görev**: Çalışanın görevi
-- **Telefon**: İletişim numarası
-- **Maaş**: Çalışan maaşı
 
-### Beslenme Planları
-Hayvanların beslenme detaylarını içerir.
-- **BeslenmeID**: Beslenme kimliği
-- **HayvanID**: İlgili hayvan kimliği
-- **Yemekler**: Yemek listesi
-- **PorsiyonMiktarı**: Porsiyon miktarı
-- **ÖğünSayısı**: Günlük öğün sayısı
 
-### Laboratuvar Sonuçları
-Yapılan test sonuçları ve detaylarını içerir.
-- **SonuçID**: Sonuç kimliği
-- **HayvanID**: İlgili hayvan kimliği
-- **TestTarihi**: Test tarihi
-- **TestAdi**: Test adı
-- **SonuçDetayı**: Test sonucu detayları
+
+
+
 ER DİYAGRAMI
 
 

@@ -158,4 +158,5 @@ ER DİYAGRAMI
 
 
 
-![Ekran görüntüsü 2024-11-06 121246](https://github.com/user-attachments/assets/a41b2bca-6935-483a-aacd-14b754e13854)
+![Ekran görüntüsü 2025-01-05 153631](https://github.com/user-attachments/assets/51ebdbe7-2ffc-42a1-a558-adeb1945ba92)
+
